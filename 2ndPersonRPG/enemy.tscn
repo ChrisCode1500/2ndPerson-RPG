@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://b71rwnk3kp5hf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wdnvg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnf7v"]
+albedo_color = Color(1, 0.00392157, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_08vf0"]
+top_radius = 0.0
+bottom_radius = 0.1
+height = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syenh"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ntn05"]
+top_radius = 0.0
+bottom_radius = 0.2
+height = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tunl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6m0x6"]
+
+[node name="Enemy" type="CharacterBody3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot"]
+mesh = SubResource("BoxMesh_wdnvg")
+surface_material_override/0 = SubResource("StandardMaterial3D_dnf7v")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.0648458, -0.997895, 0, 0.997895, 0.0648458, 0.106515, 0.145891, 0.516398)
+mesh = SubResource("CylinderMesh_08vf0")
+surface_material_override/0 = SubResource("StandardMaterial3D_syenh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.0648458, -0.997895, 0, 0.997895, 0.0648458, 0.106515, 0.145891, 0.515943)
+mesh = SubResource("CylinderMesh_ntn05")
+surface_material_override/0 = SubResource("StandardMaterial3D_4tunl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6m0x6")
