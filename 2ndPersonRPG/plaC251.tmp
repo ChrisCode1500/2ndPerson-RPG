@@ -64,11 +64,10 @@ script = ExtResource("6_r5n5c")
 player = NodePath("..")
 model_root = NodePath("../ModelRoot")
 
-[node name="Animation__controller" type="Node" parent="." node_paths=PackedStringArray("animation_tree", "player", "animation_player")]
+[node name="Animation__controller" type="Node" parent="." node_paths=PackedStringArray("animation_tree", "player")]
 script = ExtResource("7_77rk5")
 animation_tree = NodePath("../ModelRoot/AnimationTree")
 player = NodePath("..")
-animation_player = NodePath("../ModelRoot/BETTERTESTCHARACTERSTILLIGNORE/AnimationPlayer")
 
 [node name="ModelRoot" type="Node3D" parent="."]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -1, 0)
